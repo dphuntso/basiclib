@@ -6,7 +6,7 @@
 /*   By: dphuntso <dphuntso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 19:15:39 by dphuntso          #+#    #+#             */
-/*   Updated: 2018/03/02 13:12:20 by dphuntso         ###   ########.fr       */
+/*   Updated: 2018/03/08 02:03:33 by dphuntso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putstr(char const *s)
 {
+	if (s == NULL)
+		return ;
 	while (*s)
 	{
 		ft_putchar(*s);
