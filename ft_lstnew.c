@@ -6,7 +6,7 @@
 /*   By: dphuntso <dphuntso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/28 16:52:52 by dphuntso          #+#    #+#             */
-/*   Updated: 2018/03/07 15:58:34 by dphuntso         ###   ########.fr       */
+/*   Updated: 2018/03/07 20:28:45 by dphuntso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,5 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 		ft_memcpy(node->content, content, content_size);
 		node->content_size = content_size;
 	}
-	node->next = NULL;
 	return (node);
 }
