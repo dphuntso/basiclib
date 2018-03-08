@@ -6,7 +6,7 @@
 /*   By: dphuntso <dphuntso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 11:53:14 by dphuntso          #+#    #+#             */
-/*   Updated: 2018/03/03 14:41:40 by dphuntso         ###   ########.fr       */
+/*   Updated: 2018/03/07 23:16:46 by dphuntso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_strnequ(char const *s1, char const *s2, size_t n)
 		s1++;
 		s2++;
 	}
-	if (*s2)
-		return (0);
-	return (1);
+	if (n == 0 || *s1 == '\0')
+		return (1);
+	return (0);
 }

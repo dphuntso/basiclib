@@ -6,7 +6,7 @@
 /*   By: dphuntso <dphuntso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/23 21:29:06 by dphuntso          #+#    #+#             */
-/*   Updated: 2018/03/02 14:44:28 by dphuntso         ###   ########.fr       */
+/*   Updated: 2018/03/07 23:31:16 by dphuntso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		p2++;
 		n--;
 	}
+	if (n == 0)
+		return (0);
 	return (*p1 - *p2);
 }

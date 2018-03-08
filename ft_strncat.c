@@ -6,7 +6,7 @@
 /*   By: dphuntso <dphuntso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/22 14:45:44 by dphuntso          #+#    #+#             */
-/*   Updated: 2018/02/24 00:23:57 by dphuntso         ###   ########.fr       */
+/*   Updated: 2018/03/07 23:29:50 by dphuntso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,13 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	str = s1;
 	while (*str)
 		str++;
-	while (n)
+	while (n && *s2)
 	{
-		if (*s2)
-			*str = *s2;
-		else
-		{
-			*str = '\0';
-			break ;
-		}
+		*str = *s2;
 		s2++;
 		str++;
 		n--;
 	}
+	*str = '\0';
 	return (s1);
 }

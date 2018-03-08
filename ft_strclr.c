@@ -6,7 +6,7 @@
 /*   By: dphuntso <dphuntso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 10:21:50 by dphuntso          #+#    #+#             */
-/*   Updated: 2018/02/28 11:22:11 by dphuntso         ###   ########.fr       */
+/*   Updated: 2018/03/07 23:57:58 by dphuntso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_strclr(char *s)
 {
+	if (s == NULL)
+		return ;
 	while (*s)
 	{
 		*s = '\0';
