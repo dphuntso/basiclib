@@ -6,7 +6,7 @@
 /*   By: dphuntso <dphuntso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 14:51:47 by dphuntso          #+#    #+#             */
-/*   Updated: 2018/03/05 00:01:33 by dphuntso         ###   ########.fr       */
+/*   Updated: 2018/03/08 01:39:46 by dphuntso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static	char	*ft_sstrcpy(char *dst, const char *src, size_t len)
 	return (dst);
 }
 
-char			**ft_strsplit(char const *s, char c)
+static	char	**extra(char const *s, char c)
 {
 	char	**array;
 	size_t	len;
@@ -70,9 +70,7 @@ char			**ft_strsplit(char const *s, char c)
 	len = 0;
 	while (*s)
 	{
-		while (*s == c)
-			s++;
-		if (*s)
+		if (*s && *s != c)
 		{
 			array[len] = (char *)malloc((ft_len(s, c)) * sizeof(char) + 1);
 			if (array[len] == NULL)
@@ -82,7 +80,19 @@ char			**ft_strsplit(char const *s, char c)
 		}
 		while (*s != c && *s)
 			s++;
+		while (*s == c)
+			s++;
 	}
 	array[len] = NULL;
+	return (array);
+}
+
+char			**ft_strsplit(char const *s, char c)
+{
+	char	**array;
+
+	if (s == NULL)
+		return (NULL);
+	array = extra(s, c);
 	return (array);
 }

@@ -6,7 +6,7 @@
 /*   By: dphuntso <dphuntso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 14:40:47 by dphuntso          #+#    #+#             */
-/*   Updated: 2018/03/04 21:58:42 by dphuntso         ###   ########.fr       */
+/*   Updated: 2018/03/08 01:28:24 by dphuntso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ char			*ft_strtrim(char const *s)
 	size_t	len;
 	size_t	i;
 
+	if (s == NULL)
+		return (NULL);
 	str = (char *)s;
 	front = spacefront(s);
 	len = ft_strlen(s) - front - spaceback(s);
@@ -71,14 +73,11 @@ char			*ft_strtrim(char const *s)
 	if ((str = (char *)malloc(len * sizeof(char) + 1)) == NULL)
 		return (NULL);
 	i = 0;
-	if (len != 0)
+	while (i < len)
 	{
-		while (i < len)
-		{
-			str[i] = s[front];
-			i++;
-			front++;
-		}
+		str[i] = s[front];
+		i++;
+		front++;
 	}
 	str[i] = '\0';
 	return (str);
